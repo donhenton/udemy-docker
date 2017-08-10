@@ -28,7 +28,16 @@ docker inspect <sha> | grep IP
 
 ## Docker Compose
 * dup.sh illustrates docker compose for the redis server and the boot client startup
-* build is done prior to docker compose command
+* build is done prior to docker compose command (mvn and docker-compose)
 * the env variable issue is set in the docker-compose.yml file
 * the volumes command in the docker-compose file maps the docs folder to app folder inside the container
 * ddown.sh will bring the containers down and delete them, also removes any volume mappings
+
+## Docker Compose Commands
+
+* docker-compose ps (see all services under the current docker-compose)
+* docker-compose logs (-f) to follow
+* docker-compose logs <container> -f
+* docker-compose stop (to stop with out delete)
+* docker-compose start (to restart)
+* docker-compose rm to remove the containers
