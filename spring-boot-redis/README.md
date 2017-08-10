@@ -18,3 +18,16 @@ dockerlocal to find the redis server
 * --link points to the name of the redis-container
 * this turns the name into the host_name for the redis server
 * the spring boot env variable sets boot to override the redis_host variable in app props
+
+
+## Link command places host entries
+* the link command places a host entry into the etc/hosts file of
+the source container. You can view assigned internal ips using
+
+docker inspect <sha> | grep IP
+
+## Docker Compose
+* dd.sh illustrates docker compose for the redis server and the boot client
+* build is down prior to docker compose command
+* the env variable issue is set in the docker-compose.yml file
+* the volumes command in the docker-compose file maps the docs folder to app folder inside the container
