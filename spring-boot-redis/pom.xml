@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.dhenton9000.spring</groupId>
+    <artifactId>spring-boot-redis</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>jar</packaging>
+    <name>spring-boot-redis</name>
+   
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>1.5.6.RELEASE</version>
+        <relativePath/>
+        <!-- lookup parent from repository -->
+    </parent>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+        <webservice.javaopts>-Xms1g -Xmx2g -XX:MaxPermSize=192m</webservice.javaopts>
+        <tomcat.deploy.name>${project.artifactId}</tomcat.deploy.name>
+        <application.name>${project.artifactId}</application.name>
+        
+    </properties>
+    <dependencies>
+        
+         
+        
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-freemarker</artifactId>
+        </dependency>
+      
+        
+       <dependency>
+            <groupId>redis.clients</groupId>
+            <artifactId>jedis</artifactId>
+            <version>2.9.0</version>
+        </dependency>
+
+    </dependencies>
+    <build>
+        
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+           
+        </resources>
+        
+        <plugins>
+            
+             
+            
+            
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <fork>true</fork>
+                    <!-- set to true to remove devtools when packed as a jar -->
+                    <excludeDevtools>false</excludeDevtools>
+                </configuration>
+            </plugin>
+            
+           <!-- https://springframework.guru/running-spring-boot-in-a-docker-container/ -->
+            <!-- ip is from docker-machine ip  
+             <plugin>
+                <groupId>io.fabric8</groupId>
+                <artifactId>docker-maven-plugin</artifactId>
+                <version>0.21.0</version>
+                <configuration>
+                    <dockerHost>https://192.168.99.100:2376</dockerHost>
+                    <verbose>true</verbose>
+                     
+                   
+                               <images>
+                                   <image>
+                                       <name>ni-cdn-server</name>
+                                       <build>
+                                            <dockerFileDir>/${project.basedir}</dockerFileDir>
+                                           <assembly>
+                                               <descriptorRef>artifact</descriptorRef>
+                                           </assembly>
+                                       </build>
+                                   </image>
+                               </images>
+                           </configuration>
+                       </plugin>
+            -->
+            
+            
+        </plugins>
+    </build>
+    
+ 
+ 
+    
+    
+</project>
