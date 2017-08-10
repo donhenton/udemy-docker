@@ -27,7 +27,8 @@ the source container. You can view assigned internal ips using
 docker inspect <sha> | grep IP
 
 ## Docker Compose
-* dd.sh illustrates docker compose for the redis server and the boot client
-* build is down prior to docker compose command
+* dup.sh illustrates docker compose for the redis server and the boot client startup
+* build is done prior to docker compose command
 * the env variable issue is set in the docker-compose.yml file
 * the volumes command in the docker-compose file maps the docs folder to app folder inside the container
+* ddown.sh will bring the containers down and delete them, also removes any volume mappings
