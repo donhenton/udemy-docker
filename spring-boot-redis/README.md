@@ -1,5 +1,8 @@
 # Docker Demonstration of two Docker container communicating
 
+## Course
+https://www.udemy.com/docker-tutorial-for-devops-run-docker-containers
+
 
 ## Container 1
 * Redis
