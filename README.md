@@ -1,4 +1,4 @@
-# Docker Demonstration of two Docker container communicating
+# Docker Demonstration of two Docker containers communicating
 
 ## Course
 https://www.udemy.com/docker-tutorial-for-devops-run-docker-containers
