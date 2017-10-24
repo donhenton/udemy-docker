@@ -4,7 +4,7 @@
 https://www.udemy.com/docker-tutorial-for-devops-run-docker-containers
 
 ## Instructions
-The instructions below refer to file sin the spring-boot-redis folder
+The instructions below refer to files in the spring-boot-redis folder
 
 ## Container 1
 * Redis
