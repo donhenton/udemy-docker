@@ -8,6 +8,7 @@
 ```docker-compose up -d``` in the folder with the docker-compose.yml file
 
 ## Stopping the registry
+
 ```docker-compse down``` in the folder with the docker-compose.yml file
 
 ## Url for the repository
