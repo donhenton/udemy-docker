@@ -14,3 +14,8 @@ services:
 
 volumes:
   registry:
+
+
+
+
+  #http://localhost:5000/v2/_catalog
