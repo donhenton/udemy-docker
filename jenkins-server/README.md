@@ -54,3 +54,32 @@ pipeline {
 
 The various variables used to disable TLS will not be needed in an environment where TLS is handled properly
 The github repo docker file also has a number of SSL check disablers that should be removed as well
+
+
+## Other Pipelines
+
+```groovy
+pipeline {
+    agent {
+        label '!windows'
+    }
+
+    environment {
+        DISABLE_AUTH = 'true'
+        DB_ENGINE    = 'sqlite'
+        GIT_SSL_NO_VERIFY=1
+    }
+
+    stages {
+        stage('Build') {
+            steps {
+                echo "Database engine is ${DB_ENGINE}"
+                echo "DISABLE_AUTH is ${DISABLE_AUTH}"
+                echo "SSL VERIFY is ${GIT_SSL_NO_VERIFY}"
+                sh 'printenv'
+            }
+        }
+    }
+}
+```
+
