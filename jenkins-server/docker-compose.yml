@@ -19,5 +19,21 @@ services:
             - /var/lib/jenkins:/home/jenkins
         depends_on:
             - jenkins
-# The Line# 18 is significant here as the mounted volume will help fix the docker in docker volume mount issue. Its covered well in our previous article here
+    my-registry:
+        image: registry:latest
+        container_name: my-registry
+        volumes:
+        - registry:/var/lib/registry #internal:host you need to create this folder and set permissions /var/lib/registry
+        ports:
+        - "5000:5000"
+        restart: unless-stopped
+        environment:
+        - REGISTRY_HTTP_RELATIVEURLS=true #needed for internal cert issues not needed in sane environment
+volumes:
+    registry:
 
+# The Line# 18 is significant here as the mounted volume 
+# will help fix the docker in docker volume mount issue. Its covered well in our previous article here
+
+#http://localhost:5000/v2/_catalog docker registry
+#http://localhost:8080 jenkins

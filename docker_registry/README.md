@@ -9,11 +9,11 @@
 
 ## Stopping the registry
 
-```docker-compse down``` in the folder with the docker-compose.yml file
+```docker-compose down``` in the folder with the docker-compose.yml file
 
 ## Url for the repository
 
-<http://localhost:50000/v2/_catalog>
+<http://localhost:5000/v2/_catalog>
 
 ## Configuring
 
@@ -22,5 +22,6 @@
 ## Pushing images
 
 * tag your local image that you want to push with the info to the local registry:
-* ```docker tag java:latest my-registry:50000/javaimages/java:latest```
-* view <http://localhost:50000/v2/javaimages/java/tags/list>
+* ```docker tag java:latest my-registry:5000/javaimages/java:latest```
+* view <http://localhost:5000/v2/javaimages/java/tags/list>
+* ```docker push my-registry:5000/javaimages/java:latest```
