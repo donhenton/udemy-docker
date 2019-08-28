@@ -5,16 +5,13 @@ services:
     image: registry:latest
     container_name: my-registry
     volumes:
-      - registry:/var/lib/registry
+      - ./registrydata:/data #host location:container location
     ports:
       - "5000:5000"
     restart: unless-stopped
     environment:
       - REGISTRY_HTTP_RELATIVEURLS=true
-
-volumes:
-  registry:
-
+      - REGISTRY_STORAGE_FILESYSTEM_ROOTDIRECTORY=/data # tell the registry to store at /data
 
 
 

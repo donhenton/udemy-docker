@@ -25,3 +25,11 @@
 * ```docker tag java:latest my-registry:5000/javaimages/java:latest```
 * view <http://localhost:5000/v2/javaimages/java/tags/list>
 * ```docker push my-registry:5000/javaimages/java:latest```
+
+## Storage
+
+The registry image storage is on the host at ./registrydata which is excluded from source control
+
+## References
+
+<https://www.howtoforge.com/how-to-setup-private-docker-registry-on-ubuntu-1804-lts/>
