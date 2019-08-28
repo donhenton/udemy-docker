@@ -7,7 +7,7 @@ services:
     volumes:
       - registry:/var/lib/registry
     ports:
-      - "50000:5000"
+      - "5000:5000"
     restart: unless-stopped
     environment:
       - REGISTRY_HTTP_RELATIVEURLS=true

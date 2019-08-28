@@ -1,0 +1,23 @@
+version: '3.1'
+services:
+    jenkins:
+        container_name: jenkins
+        ports:
+            - '8080:8080'
+            - '50000:50000'
+        image: donhenton/jenkins-docker-master
+    jenkins-slave:
+        container_name: jenkins-slave
+        restart: always
+        environment:
+            - 'JENKINS_URL=http://jenkins:8080'
+       # image: localhost:5000/jenkins-slave
+        image: donhenton/jenkins-master-slave 
+        volumes:
+            - /var/run/docker.sock:/var/run/docker.sock  # Expose the docker daemon in the container
+            #- /home/jenkins:/home/jenkins # Avoid mysql volume mount issue, host:inner
+            - /var/lib/jenkins:/home/jenkins
+        depends_on:
+            - jenkins
+# The Line# 18 is significant here as the mounted volume will help fix the docker in docker volume mount issue. Its covered well in our previous article here
+
