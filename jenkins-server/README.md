@@ -24,13 +24,13 @@ pipeline {
   stages {
     stage('Cloning Git') {
       steps {
-        git 'https://github.com/donhenton/node-todo-frontend.git'
+        git 'https://github.com/donhenton/node-docker-simple.git'
       }
     }
     stage('Building image') {
       steps{
         script {
-          dockerImage = docker.build(registry + "/gustavo/todo:$BUILD_NUMBER")
+          dockerImage = docker.build(registry + "/donhenton/node-docker-simple:$BUILD_NUMBER")
         }
       }
     }
@@ -45,7 +45,7 @@ pipeline {
     }
     stage('Remove Unused docker image') {
       steps{
-        sh "docker rmi $registry/gustavo/todo:$BUILD_NUMBER"
+        sh "docker rmi $registry/donhenton/node-docker-simple:$BUILD_NUMBER"
       }
   }
  }
