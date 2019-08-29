@@ -24,6 +24,7 @@ pipeline {
   stages {
     stage('Cloning Git') {
       steps {
+        sh 'git config --global http.sslVerify "false"'
         git 'https://github.com/donhenton/node-docker-simple.git'
       }
     }
