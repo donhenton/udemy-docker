@@ -2,7 +2,9 @@
 
 ## Starting Docker Compose
 
-```docker-compose up -d```
+* ```docker-compose up -d```
+* jenkins username: admin 
+* password: admin
 
 ## Pipeline for Docker Build
 
