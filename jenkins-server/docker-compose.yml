@@ -15,7 +15,7 @@ services:
         image: donhenton/jenkins-master-slave 
         volumes:
             - /var/run/docker.sock:/var/run/docker.sock  # Expose the docker daemon in the container
-            #- /home/jenkins:/home/jenkins # Avoid mysql volume mount issue, host:inner
+            #- /home/jenkins:/home/jenkins # Avoid mysql volume mount issue, host entry (may be relative):inner container folder
             - /var/lib/jenkins:/home/jenkins # on the mac this may need to be mapped in Docker -> Preferences -> File Sharing
         depends_on:
             - jenkins
