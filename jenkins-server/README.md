@@ -90,3 +90,6 @@ pipeline {
 }
 ```
 
+# JENKINS MAVEN PUBLISHING
+
+see <https://github.com/donhenton/webjar-app> for a maven project that publishes to a local repository
