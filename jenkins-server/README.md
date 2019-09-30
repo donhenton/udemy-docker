@@ -1,5 +1,11 @@
 # JENKINS SERVER
 
+## Starting Docker Compose
+
+* ```docker-compose up -d```
+* jenkins username: admin 
+* password: admin
+
 ## Pipeline for Docker Build
 
 <https://medium.com/@gustavo.guss/jenkins-building-docker-image-and-sending-to-registry-64b84ea45ee9>
