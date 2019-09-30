@@ -90,6 +90,21 @@ pipeline {
 }
 ```
 
-# JENKINS MAVEN PUBLISHING
+## JENKINS MAVEN PUBLISHING
 
 see <https://github.com/donhenton/webjar-app> for a maven project that publishes to a local repository
+
+## SSL Setup
+
+If you need to install a PEM certificate and have Jenkins use it, see the environment line in the jenkins service in the docker-compose file. This line passes variables to the start up of jenkins that tell it to use the modified certs file that
+contains your trusted certificates
+
+## Importing PEM Files
+
+* copy the certs file from jre/lib/security to your own copy
+* run the following to import the pem file into your copy of the certs file
+
+```bash
+openssl x509 -outform der -in mycert.pem -out mycert.der
+keytool -import -trustcacerts -alias "mycert" -file mycert.der -keystore cacerts.jks -keypass changeit -storepass changeit
+```
