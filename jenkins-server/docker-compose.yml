@@ -32,6 +32,9 @@ services:
         image: sonatype/nexus3 
         volumes:
             - ~/docker_series/nexus_repo:/nexus-data
+        environment:
+            - 'INSTALL4J_ADD_VM_PARAMS=-Xms1200m -Xmx1200m -XX:MaxDirectMemorySize=2g -Djavax.net.ssl.trustStore=/nexus-data/certs/cacerts.jks -Djavax.net.ssl.trustStorePassword=changeit'
+   
         restart: unless-stopped
                
     my-registry:
