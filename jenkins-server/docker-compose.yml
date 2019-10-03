@@ -49,6 +49,14 @@ services:
             - REGISTRY_HTTP_RELATIVEURLS=true #needed for internal cert issues not needed in sane environment
             - REGISTRY_STORAGE_FILESYSTEM_ROOTDIRECTORY=/data # tell the registry to store at /data
 
+    test-client:
+        image: ubuntu:19.04
+        volumes:
+            - /var/run/docker.sock:/var/run/docker.sock  # Expose the docker daemon in the container
+            #- /home/jenkins:/home/jenkins # Avoid mysql volume mount issue, host entry (may be relative):inner container folder
+            - /var/lib/jenkins:/home/jenkins # on the mac this may need to be mapped in Docker -> Preferences -> File Sharing
+        
+
 
 # The Line# 18 is significant here as the mounted volume 
 # will help fix the docker in docker volume mount issue. Its covered well in our previous article here
