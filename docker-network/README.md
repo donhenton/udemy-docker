@@ -4,8 +4,8 @@ Experimenting with docker networking
 
 ## Creating the docker network
 
-<https://docker-curriculum.com/#docker-network>
-<https://runnable.com/docker/docker-compose-networking>
+* <https://docker-curriculum.com/#docker-network>
+* <https://runnable.com/docker/docker-compose-networking>
 
 * list docker networks: ```docker network ls```
 * inspect network details: ```docker network inspect <networkname>```
