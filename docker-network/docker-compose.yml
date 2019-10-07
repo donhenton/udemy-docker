@@ -1,0 +1,33 @@
+version: '3.7'
+networks:
+    bonzo-net:
+    legacy:
+services:
+    test1:
+      image: donhenton/ubuntu-base
+      container_name: test1
+      command: tail -F /dev/null
+      networks: 
+        - bonzo-net
+        - legacy
+    test2:
+      image: donhenton/ubuntu-base
+      container_name: test2
+      command: tail -F /dev/null
+      networks: 
+        bonzo-net:
+          aliases:
+            - test2bonzo
+        legacy:
+      links: 
+            - "test1:manny" #
+            - "test3:moe"   # extra alias
+    test3:
+      image: donhenton/ubuntu-base
+      container_name: test3
+      networks: 
+        bonzo-net:
+          aliases:
+            - test3bonzo
+        legacy:
+      command: tail -F /dev/null
