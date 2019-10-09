@@ -11,6 +11,7 @@ services:
            
         volumes:
             - ~/ssl-installs/keystore_create:/etc/jenkins
+            - ~/ssl-installs/ssl-certs:/etc/ssl/certs
             - ~/docker_series/jenkins_home:/var/jenkins_home # map jenkins home to a folder on your host
 
     jenkins-slave:
@@ -18,10 +19,13 @@ services:
         restart: always
         environment:
             - 'JENKINS_URL=http://jenkins:8080'
+            - 'JAVA_OPTS=-Djavax.net.ssl.trustStore=/var/jenkins_home/certs/cacerts.jks -Djavax.net.ssl.trustStorePassword=changeit'
 
         image: donhenton/jenkins-master-slave 
         volumes:
             - /var/run/docker.sock:/var/run/docker.sock  # Expose the docker daemon in the container
+            - ~/ssl-installs/keystore_create:/etc/jenkins  # for the jenkins keystore
+            - ~/ssl-installs/ssl-certs:/etc/ssl/certs # for the cert for built in git
             #- /home/jenkins:/home/jenkins # Avoid mysql volume mount issue, host entry (may be relative):inner container folder
             - /var/lib/jenkins:/home/jenkins # on the mac this may need to be mapped in Docker -> Preferences -> File Sharing
         depends_on:
