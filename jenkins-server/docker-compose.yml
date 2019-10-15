@@ -33,6 +33,7 @@ services:
     nexus_repo:
         ports:
             - '9081:8081'
+            - '6095:6095'
         image: sonatype/nexus3 
         volumes:
             - ~/docker_series/nexus_repo:/nexus-data
