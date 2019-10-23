@@ -37,6 +37,8 @@ docker inspect <sha> | grep IP
 * the env variable issue is set in the docker-compose.yml file
 * the volumes command in the docker-compose file maps the docs folder to app folder inside the container
 * ddown.sh will bring the containers down and delete them, also removes any volume mappings
+* a .env file (at the same location as the yml file) can be used for global env variables that can be substituted in the yml file via ${VAR_NAME}
+* a separate file can be specified with variables only available to the container (env_file: .env_fred) these will be specific to the container
 
 ## Docker Compose Commands
 
