@@ -1,10 +1,10 @@
 # Jenkins Pipeline for JS-Parser
 
-https://github.com/donhenton/js-parser.git
-https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-2.1.1-linux-x86_64.tar.bz2
-https://hackernoon.com/running-karma-tests-with-headless-chrome-inside-docker-ae4aceb06ed3
-https://dzone.com/articles/how-to-run-karma-tests-in-a-docker-container
-https://github.com/karma-runner/karma-chrome-launcher/issues/189
+* https://github.com/donhenton/js-parser.git
+* https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-2.1.1-linux-x86_64.tar.bz2
+* https://hackernoon.com/running-karma-tests-with-headless-chrome-inside-docker-ae4aceb06ed3
+* https://dzone.com/articles/how-to-run-karma-tests-in-a-docker-container
+* https://github.com/karma-runner/karma-chrome-launcher/issues/189
 
 ## SSL
 in the agent section, if you add 
