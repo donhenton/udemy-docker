@@ -49,10 +49,10 @@ docker inspect <sha> | grep IP
 * docker-compose start (to restart)
 * docker-compose rm to remove the containers
   
-  ## Docker Registry Folder
-  
-  Docker compose file for docker registry
-  
-  ## Jenkins Server Folder
-  
-  Docker compose file for Jenkins server, Jenkins slave and Docker Registry
+## Docker Registry Folder
+
+Docker compose file for docker registry
+
+## Jenkins Server Folder
+
+Docker compose file for Jenkins server, Jenkins slave and Docker Registry
